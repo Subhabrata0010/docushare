@@ -22,7 +22,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "DocuD",
+  title: "DocuDu",
   description: "Your powerful document editing tool",
 };
 
