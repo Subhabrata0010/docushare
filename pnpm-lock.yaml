@@ -20,6 +20,15 @@ importers:
       '@lexical/react':
         specifier: 0.24.0
         version: 0.24.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(yjs@13.6.27)
+      '@lexical/rich-text':
+        specifier: 0.24.0
+        version: 0.24.0
+      '@lexical/selection':
+        specifier: 0.24.0
+        version: 0.24.0
+      '@lexical/utils':
+        specifier: 0.24.0
+        version: 0.24.0
       '@liveblocks/client':
         specifier: ^3.6.0
         version: 3.6.0(@types/json-schema@7.0.15)
@@ -32,6 +41,9 @@ importers:
       '@liveblocks/react-lexical':
         specifier: ^3.6.0
         version: 3.6.0(@lexical/react@0.24.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(yjs@13.6.27))(@lexical/rich-text@0.24.0)(@lexical/selection@0.24.0)(@lexical/utils@0.24.0)(@lexical/yjs@0.24.0(yjs@13.6.27))(@types/json-schema@7.0.15)(@types/react-dom@19.1.9(@types/react@19.1.12))(@types/react@19.1.12)(lexical@0.24.0)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@liveblocks/react-ui':
+        specifier: ^3.6.1
+        version: 3.6.1(@types/json-schema@7.0.15)(@types/react-dom@19.1.9(@types/react@19.1.12))(@types/react@19.1.12)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@radix-ui/react-dialog':
         specifier: ^1.1.15
         version: 1.1.15(@types/react-dom@19.1.9(@types/react@19.1.12))(@types/react@19.1.12)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -458,8 +470,16 @@ packages:
   '@liveblocks/client@3.6.0':
     resolution: {integrity: sha512-JdkGoXEQ06n3MpN6iDd7Lnxytspqqfvvq0xT0JFbTcxSXQFAtakgUT127GwvpRgq3mk+DdvSw8Ppf/4rbgm13w==}
 
+  '@liveblocks/client@3.6.1':
+    resolution: {integrity: sha512-3b90w8Ii9+syCvGUXw9j0dXQkL2qoa80AZY1Q8X01ah8hQKJgPEZiV0Ftlm36TMPZBh642bfw8Uh/JLiv5a90g==}
+
   '@liveblocks/core@3.6.0':
     resolution: {integrity: sha512-r4/AnfcGJJIoQA53AvUeogy0MBSlC/LgimgpsF6rgbrSrU3z5V/53MivEJt8fTGo8JrMIrKr03pvZha1RZ/xsw==}
+    peerDependencies:
+      '@types/json-schema': ^7
+
+  '@liveblocks/core@3.6.1':
+    resolution: {integrity: sha512-KoRIU/iU4ITmcIANUjOtLlxhztUSrrB00owS/DIPSE2tFj38O0buSi7a/IP2MFjLZRUvdZL43UVwtwcAJGCsXg==}
     peerDependencies:
       '@types/json-schema': ^7
 
@@ -498,8 +518,33 @@ packages:
       '@types/react-dom':
         optional: true
 
+  '@liveblocks/react-ui@3.6.1':
+    resolution: {integrity: sha512-Enz09HVe03MWTQMikBj/NkE8bugwfJvJBpHfQA41ZGxIY8J8JIG0Tj1WZMrz2/pZzLYMXPO+NSv6UscMw0G40Q==}
+    peerDependencies:
+      '@types/react': '*'
+      '@types/react-dom': '*'
+      react: ^18 || ^19 || ^19.0.0-rc
+      react-dom: ^18 || ^19 || ^19.0.0-rc
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      '@types/react-dom':
+        optional: true
+
   '@liveblocks/react@3.6.0':
     resolution: {integrity: sha512-QUJoO8K8H1bzO8tLxmYgo9O+/ST42CYV5TC8t1V3Q8RDi2DvPpEoM+2nPWPuXL0n+amBAcmMuSqzCocmKAUcKQ==}
+    peerDependencies:
+      '@types/react': '*'
+      '@types/react-dom': '*'
+      react: ^18 || ^19 || ^19.0.0-rc
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      '@types/react-dom':
+        optional: true
+
+  '@liveblocks/react@3.6.1':
+    resolution: {integrity: sha512-UkcVSGXDPkr+3ng1LivzfwVFqZN1DDsr6qBakh8aeSGDvblf4XvR5WQ+mH3s4y+se08tN5G3bMK8ztb0hbGgvg==}
     peerDependencies:
       '@types/react': '*'
       '@types/react-dom': '*'
@@ -3081,7 +3126,17 @@ snapshots:
     transitivePeerDependencies:
       - '@types/json-schema'
 
+  '@liveblocks/client@3.6.1(@types/json-schema@7.0.15)':
+    dependencies:
+      '@liveblocks/core': 3.6.1(@types/json-schema@7.0.15)
+    transitivePeerDependencies:
+      - '@types/json-schema'
+
   '@liveblocks/core@3.6.0(@types/json-schema@7.0.15)':
+    dependencies:
+      '@types/json-schema': 7.0.15
+
+  '@liveblocks/core@3.6.1(@types/json-schema@7.0.15)':
     dependencies:
       '@types/json-schema': 7.0.15
 
@@ -3145,10 +3200,46 @@ snapshots:
     transitivePeerDependencies:
       - '@types/json-schema'
 
+  '@liveblocks/react-ui@3.6.1(@types/json-schema@7.0.15)(@types/react-dom@19.1.9(@types/react@19.1.12))(@types/react@19.1.12)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+    dependencies:
+      '@floating-ui/react-dom': 2.1.6(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@liveblocks/client': 3.6.1(@types/json-schema@7.0.15)
+      '@liveblocks/core': 3.6.1(@types/json-schema@7.0.15)
+      '@liveblocks/react': 3.6.1(@types/json-schema@7.0.15)(@types/react-dom@19.1.9(@types/react@19.1.12))(@types/react@19.1.12)(react@19.1.0)
+      '@radix-ui/react-dropdown-menu': 2.1.16(@types/react-dom@19.1.9(@types/react@19.1.12))(@types/react@19.1.12)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@radix-ui/react-popover': 1.1.15(@types/react-dom@19.1.9(@types/react@19.1.12))(@types/react@19.1.12)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@radix-ui/react-slot': 1.2.3(@types/react@19.1.12)(react@19.1.0)
+      '@radix-ui/react-toggle': 1.1.10(@types/react-dom@19.1.9(@types/react@19.1.12))(@types/react@19.1.12)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@radix-ui/react-tooltip': 1.2.8(@types/react-dom@19.1.9(@types/react@19.1.12))(@types/react@19.1.12)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      frimousse: 0.2.0(react@19.1.0)
+      marked: 15.0.12
+      react: 19.1.0
+      react-dom: 19.1.0(react@19.1.0)
+      slate: 0.110.2
+      slate-history: 0.110.3(slate@0.110.2)
+      slate-hyperscript: 0.100.0(slate@0.110.2)
+      slate-react: 0.110.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(slate@0.110.2)
+    optionalDependencies:
+      '@types/react': 19.1.12
+      '@types/react-dom': 19.1.9(@types/react@19.1.12)
+    transitivePeerDependencies:
+      - '@types/json-schema'
+
   '@liveblocks/react@3.6.0(@types/json-schema@7.0.15)(@types/react-dom@19.1.9(@types/react@19.1.12))(@types/react@19.1.12)(react@19.1.0)':
     dependencies:
       '@liveblocks/client': 3.6.0(@types/json-schema@7.0.15)
       '@liveblocks/core': 3.6.0(@types/json-schema@7.0.15)
+      react: 19.1.0
+    optionalDependencies:
+      '@types/react': 19.1.12
+      '@types/react-dom': 19.1.9(@types/react@19.1.12)
+    transitivePeerDependencies:
+      - '@types/json-schema'
+
+  '@liveblocks/react@3.6.1(@types/json-schema@7.0.15)(@types/react-dom@19.1.9(@types/react@19.1.12))(@types/react@19.1.12)(react@19.1.0)':
+    dependencies:
+      '@liveblocks/client': 3.6.1(@types/json-schema@7.0.15)
+      '@liveblocks/core': 3.6.1(@types/json-schema@7.0.15)
       react: 19.1.0
     optionalDependencies:
       '@types/react': 19.1.12
