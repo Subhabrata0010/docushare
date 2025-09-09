@@ -10,6 +10,7 @@ import {
 } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
 import "./globals.css";
+import Provider from "./Provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -55,7 +56,9 @@ export default function RootLayout({
               <UserButton />
             </SignedIn>
           </header>
+          <Provider>
           {children}
+          </Provider>
         </body>
       </html>
     </ClerkProvider>
