@@ -4,7 +4,6 @@
 @import "@liveblocks/react-ui/styles.css";
 @import "@liveblocks/react-lexical/styles.css";
 
-@import "../styles/dark-theme.css";
 
 /* ========================================== TAILWIND STYLES */
 @layer base {
@@ -304,3 +303,6 @@
 .lb-elevation {
   background: #0f1c34;
 }
+
+
+@import "../styles/dark-theme.css";
